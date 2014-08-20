@@ -1,5 +1,5 @@
 # Cookbook Name:: varnish
-# Recipe:: vmod-statsd
+# Recipe:: vmod_boltsort
 # Author:: Kelley Reynolds <kelley.reynolds@rubyscale.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,6 +15,6 @@
 # limitations under the License.
 #
 
-git_vmod "Boltsort" do
-  source "git://github.com/vimeo/libvmod-boltsort.git"
+git_vmod 'Boltsort' do
+  source 'git://github.com/vimeo/libvmod-boltsort.git'
 end

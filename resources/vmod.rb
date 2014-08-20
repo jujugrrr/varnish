@@ -1,6 +1,6 @@
 # Cookbook Name:: varnish
-# Recipe:: vmod-timers
-# Author:: Kelley Reynolds <kelley.reynolds@rubyscale.com>
+# Resource:: vmod
+# Author:: Matthew Thode <matt.thode@rackspace.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,6 +15,9 @@
 # limitations under the License.
 #
 
-git_vmod "Varnish Timers" do
-  source "git://github.com/jib/libvmod-timers.git"
-end
+actions 'add', 'remove'
+default_action 'add'
+
+attribute :name, kind_of: String, name_attribute: true
+attribute :source, kind_of: String, required: true
+attribute :packages, kind_of: Array, default: []

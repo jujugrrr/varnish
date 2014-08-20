@@ -1,5 +1,5 @@
 # Cookbook Name:: varnish
-# Recipe:: vmod-statsd
+# Recipe:: vmod_parsereq
 # Author:: Kelley Reynolds <kelley.reynolds@rubyscale.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,6 +15,6 @@
 # limitations under the License.
 #
 
-git_vmod "Statsd" do
-  source "git://github.com/jib/libvmod-statsd.git"
+git_vmod 'POST/GET/Cookie Parse' do
+  source 'https://github.com/xcir/libvmod-parsereq.git'
 end

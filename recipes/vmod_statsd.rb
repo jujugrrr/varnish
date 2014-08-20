@@ -1,5 +1,5 @@
 # Cookbook Name:: varnish
-# Recipe:: vmod-digest
+# Recipe:: vmod_statsd
 # Author:: Kelley Reynolds <kelley.reynolds@rubyscale.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +15,10 @@
 # limitations under the License.
 #
 
-package 'libmhash-dev'
+Chef::Application.fatal!('statsd vmod doesn\'t support version 4.0', 40) if ::Gem::Version.new(node['varnish']['version']) >= ::Gem::Version.new('4.0')
 
-git_vmod "Digest" do
-  source "https://github.com/varnish/libvmod-digest.git"
+varnish_vmod 'Statsd' do
+  source 'https://github.com/jib/libvmod-statsd.git'
+  packages ['python-docutils'] if platform_family?('debian')
+  action 'add'
 end

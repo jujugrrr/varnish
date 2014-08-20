@@ -1,5 +1,5 @@
 # Cookbook Name:: varnish
-# Recipe:: vmod-parsereq
+# Recipe:: vmod_timers
 # Author:: Kelley Reynolds <kelley.reynolds@rubyscale.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,6 +15,6 @@
 # limitations under the License.
 #
 
-git_vmod "POST/GET/Cookie Parse" do
-  source "https://github.com/xcir/libvmod-parsereq.git"
+git_vmod 'Varnish Timers' do
+  source 'git://github.com/jib/libvmod-timers.git'
 end
